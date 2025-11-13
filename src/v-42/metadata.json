@@ -1,0 +1,7 @@
+{
+  "uuid": "org.phnk.gse-window-api@phnk",
+  "name": "Window Control API",
+  "description": "Allow the user to get a list of all active windows and allow the user to set a specific window to focus, similar to the Win32 API.",
+  "shell-version": ["42"],
+  "version": 1
+}
