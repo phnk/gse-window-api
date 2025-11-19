@@ -32,14 +32,8 @@ function giconToString(gicon) {
         // File icon
         if (gicon instanceof Gio.FileIcon) {
             let path = gicon.get_file().get_path();
-            try {
-                let [ok, bytes] = GLib.file_get_contents(path);
-                if (ok && bytes) {
-                    return ByteArray.toString(bytes, "base64");
-                }
-            } catch (e) {
-                log(`[TabFix] Error reading icon file ${path}: ${e}`);
-            }
+            // Return the path directly, not base64
+            return path;
         }
     } catch (e) {
         log(`[TabFix] giconToString error: ${e}`);
